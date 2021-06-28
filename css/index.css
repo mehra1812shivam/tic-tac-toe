@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #4c6986;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  max-width: 500px;
+}
+.wrapper {
+  height: 800px;
+  max-width: 1440px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* justify-content: space-between; */
+}
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4c6986;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  margin-top: 30px;
+}
+.restart:hover {
+  background-color: #4c6986;
+  color: white;
+}
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+/* to space evenly give some weightage */
+.header .player-x {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+.header .player-o {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+.player-x.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+.player-o.active {
+  color: #7b55aa;
+  border-color: #7d51b3;
+}
+
+.game {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.board {
+  display: grid;
+  /* //will make 3 colums  */
+  /* 1fr stands for take up as much space as possible */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0px;
+  flex-grow: 1;
+  padding: 10px;
+}
+.board-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  background-color: white;
+  cursor: pointer;
+}
+/* to make border right  */
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.58);
+}
+/* to make bottom border */
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.58);
+}
+.board-tile:hover {
+  background-color: #eeeeee;
+}
+.tile-x {
+  color: #42bed7;
+}
+.tile-o {
+  color: #7b55aa;
+}
+.win span {
+  color: #23ce6b;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .left {
+    margin-bottom: 50px;
+  }
+}
